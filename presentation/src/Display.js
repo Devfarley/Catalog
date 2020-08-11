@@ -1,5 +1,6 @@
 import React from 'react'
 import Cards from './Cards'
+import CreateCard from './CreateCard'
 
 class Display extends React.Component{
     constructor(props){
@@ -21,9 +22,12 @@ class Display extends React.Component{
     render(){
             const displayCards = this.state.terms.map((terms) => <Cards key={terms._id} name={terms.name} definition={terms.def}/> )
         return(
-            <ul>
-                {displayCards}
-            </ul>
+            <div>
+                <CreateCard refresh={this.getTerms} />
+                <ul>
+                    {displayCards}
+                </ul>
+            </div>
         )
     }
 }
