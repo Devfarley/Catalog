@@ -1,5 +1,5 @@
 const express = require('express');
-const { readTerms, createTerms } = require('../../data/terms');
+const { readTerms, createTerms, upsertTerms } = require('../../data/terms');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -13,6 +13,12 @@ router.post('/', (req, res) => {
     createTerms(body).then(data => {
         res.send(data)
     })
+})
+
+router.put('/:id', (req, res) => {
+    const id = req.params.id
+    const body = req.body
+    upsertTerms(id, body).then(data =>  res.send(data));
 })
 
 module.exports = router;
