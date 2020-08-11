@@ -20,7 +20,6 @@ class Display extends React.Component{
         }
     render(){
             const displayCards = this.state.terms.map((terms) => <Cards key={terms._id} name={terms.name} definition={terms.def}/> )
-        console.log(this.state.terms)
         return(
             <ul>
                 {displayCards}
