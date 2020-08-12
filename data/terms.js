@@ -1,7 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const {ObjectId} = require('mongodb');
-const { resolve } = require('path');
 
 const url = process.env.DB_URL
 const db_name = process.env.DB_NAME

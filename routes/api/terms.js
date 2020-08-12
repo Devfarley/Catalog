@@ -21,8 +21,8 @@ router.put('/:id', (req, res) => {
     upsertTerms(id, body).then(data =>  res.send(data));
 })
 
-router.delete('/', (req,res) => {
-    const id = req.body._id
+router.delete('/:id', (req,res) => {
+    const id = req.params.id
     deleteTerms(id).then(data => res.send(data));
 })
 
