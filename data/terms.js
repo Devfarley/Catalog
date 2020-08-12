@@ -61,7 +61,7 @@ const readTermById= (id) => {
     return iou
 };
 // Ask Wes about the new option if he was able to get it to return the modified document
-const upsertTerms = (id, movieObj) => {
+const upsertTerms = (id, termObj) => {
     const iou = new Promise((resolve, reject) => {
         MongoClient.connect(url, options, (err, client) => {
             assert.equal(err, null);
@@ -69,7 +69,7 @@ const upsertTerms = (id, movieObj) => {
             const db = client.db(db_name);
             const collection = db.collection(col_name);
             collection.findOneAndUpdate({_id: new ObjectId(id)},
-            {$set: {...movieObj}},
+            {$set: {...termObj}},
             (err, result) => {
                 assert.equal(err, null);
                 readTermById(result.value._id)
