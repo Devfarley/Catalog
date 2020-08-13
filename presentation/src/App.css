@@ -1,6 +1,40 @@
+*{
+  margin: 0rem;
+}
+
+
 body {
   background-color: #c8d0d2;
   margin: 0;
+}
+
+ul{
+  list-style: none; 
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+.header{
+  background-color: slategrey;
+}
+
+.navigation li{
+  padding:0.5rem;
+}
+
+.sitename{
+  text-align: center;
+  padding: .5rem;
+  letter-spacing: 2px;
+}
+
+.navigation{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .create{
@@ -74,5 +108,5 @@ body {
 
 .options{
   padding-top: .5rem;
-  padding-left: 7rem;
+  padding-left: 5rem;
 }

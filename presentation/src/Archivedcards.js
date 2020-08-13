@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Card from './Card'
-import CreateCard from './CreateCard'
 
-
-
-
-class Cards extends React.Component{
+class Archivedcards extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -36,15 +32,11 @@ class Cards extends React.Component{
     render(){
             
             const filterArchived = this.state.terms.filter((term) => {
-               return term.archived ? null : term
+               return term.archived ? term : null
             }).map((terms) => <Card key={terms._id} 
             archive={terms.archived} terms={terms} erase={this.deleteCard} refresh={this.getTerms}/> )
         return(
             <div className='container'>
-                <div className='create'>
-                    <h1>Create A Card</h1>
-                    <CreateCard className='createinput' refresh={this.getTerms} />
-                </div>
                 <div className="card-grid">
                       {filterArchived}
                 </div>
@@ -53,5 +45,4 @@ class Cards extends React.Component{
     }
 }
 
-
-export default Cards;
+export default Archivedcards;

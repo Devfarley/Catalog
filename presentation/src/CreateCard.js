@@ -5,7 +5,8 @@ class CreateCard extends React.Component {
         super(props)
         this.state = {
             name: "",
-            def: ""
+            def: "",
+            archived: ""
         }
     }
     handleChange = (event) => {
@@ -34,6 +35,7 @@ class CreateCard extends React.Component {
                 <form onSubmit={this.handleSubmit} className="CreateCardForm">
                     <input type="text" name="name" placeholder="New Term" value={this.state.name} onChange={this.handleChange}/>
                     <input type="text" name="def" placeholder="Definition" value={this.state.def} onChange={this.handleChange}/>
+                    <input type="text" name="def" placeholder="Archive|Set to 'true' or 'false'" value={this.state.archived} onChange={this.handleChange}/>
                     <input type="submit" value="submit" />
                 </form>
             </div>
