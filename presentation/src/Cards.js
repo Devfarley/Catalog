@@ -35,11 +35,14 @@ class Cards extends React.Component{
     render(){
             const displayCards = this.state.terms.map((terms) => <Card key={terms._id} terms={terms} erase={this.deleteCard} refresh={this.getTerms}/> )
         return(
-            <div>
-                <CreateCard refresh={this.getTerms} />
-                <ul>
-                    {displayCards}
-                </ul>
+            <div className='container'>
+                <div className='create'>
+                    <h1>Create A Card</h1>
+                    <CreateCard className='createinput' refresh={this.getTerms} />
+                </div>
+                <div className="card-grid">
+                        {displayCards}
+                </div>
             </div>
         )
     }

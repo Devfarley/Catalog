@@ -1,43 +1,78 @@
-ul{
-  list-style: none;
+body {
+  background-color: #c8d0d2;
+  margin: 0;
 }
 
-
-.App {
+.create{
   text-align: center;
+  padding-bottom: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.container{
+  margin: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.card-grid{
+  display: grid;
   align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem
+}
+
+.card {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative;
+  /* positions relative because our card front and card back will be position absoultly. this allows us to have one on the back of the card and one on the front without them offsetting eachother. */
+  border-radius: .25rem;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+  background-color: white;
+  transform-style:preserve-3d;
+  /* perserves 3d animation to keep the front and back separate*/
+  height: 150px;
+  width: 300px;
+  transition: 200ms;
+  cursor: pointer;
+  /* slows the animation of the flip so that is is visible */
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+  /* setting up a transform variable to be toggled by my terinary. perspective gives more of a 3d look to the card. */
+  translateY(var(--translate-y, 0));
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover{
+  --translate-y: -2px;
+  /* setting a variable to move the card 2 pixels when the mouse hovers over it. */
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card.flip{
+  --rotate-y: 180deg;
+}
+
+.card .front{
+  padding-left:7rem;
+  text-transform: uppercase;
+  left: 0;
+}
+
+.card .front,
+.card .back{
+  position: absolute;
+  backface-visibility: hidden;
+  /* hides .card .back beacuse it is rotated on Y by 180deg */
+}
+
+.card .back{
+  padding: 1rem;
+  transform: rotateY(180deg);
+  /* flips the calls specified around so it is essentially on the back of the card. */
+}
+
+
+.options{
+  padding-top: .5rem;
+  padding-left: 7rem;
 }
