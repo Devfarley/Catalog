@@ -37,6 +37,7 @@ class Archivedcards extends React.Component {
             archive={terms.archived} terms={terms} erase={this.deleteCard} refresh={this.getTerms}/> )
         return(
             <div className='container'>
+                <h1 className="archivedcardspage">Archived Cards</h1>
                 <div className="card-grid">
                       {filterArchived}
                 </div>

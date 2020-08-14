@@ -36,6 +36,7 @@ class Allcards extends React.Component{
             archive={terms.archived} terms={terms} erase={this.deleteCard} refresh={this.getTerms}/> )
         return(
             <div className='container'>
+                <h1 className='allpagetitle'>All Cards</h1>
                 <div className='create'>
                     <h1>Create A Card</h1>
                     <CreateCard className='createinput' refresh={this.getTerms} />

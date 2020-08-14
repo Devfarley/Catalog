@@ -4,7 +4,7 @@ Switch,
 Route,
 Link
 } from 'react-router-dom'
-import Cards from './Cards'
+import ActiveCards from './ActiveCards'
 import Archivedcards from './Archivedcards'
 import Allcards from './Allcards'
 
@@ -29,7 +29,7 @@ function Routes() {
             </div>
                 <Switch>
                     <Route exact path='/'>
-                        <Cards/>
+                        <ActiveCards/>
                     </Route>
                     <Route path ='/Archive'>
                         <Archivedcards/>

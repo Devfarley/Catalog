@@ -5,7 +5,7 @@ import CreateCard from './CreateCard'
 
 
 
-class Cards extends React.Component{
+class ActiveCards extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -42,6 +42,7 @@ class Cards extends React.Component{
         return(
             <div className='container'>
                 <div className='create'>
+                    <h1 className='Activecardspage'>Active Cards</h1>
                     <h1>Create A Card</h1>
                     <CreateCard className='createinput' refresh={this.getTerms} />
                 </div>
@@ -54,4 +55,4 @@ class Cards extends React.Component{
 }
 
 
-export default Cards;
+export default ActiveCards;

@@ -42,6 +42,26 @@ a{
   padding-bottom: 3rem;
 }
 
+.allpagetitle{
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: underline;
+  padding-bottom: .5rem;
+}
+
+.Activecardspage{
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: underline;
+  padding-bottom: .5rem;
+}
+
+.archivedcardspage{
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: underline;
+  padding-bottom: .5rem;
+}
 
 
 .container{
