@@ -16,7 +16,7 @@ class ActiveCards extends React.Component{
             const api_url = process.env.REACT_APP_API_URL
             fetch(`${api_url}/terms`)
                 .then(response => response.json())
-                .then(data => this.setState({terms:data}))
+                .then(data => {this.setState({terms:data})}, () => {console.log(this.state)})
         }
 
         componentDidMount(){
