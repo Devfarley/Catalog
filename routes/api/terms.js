@@ -15,6 +15,12 @@ router.post('/', (req, res) => {
     })
 })
 
+router.patch('/:id', (req, res) => {
+    const id = req.params.id
+    const body = req.body
+    upsertTerms(id, body).then(data =>  res.send(data));
+})
+
 router.put('/:id', (req, res) => {
     const id = req.params.id
     const body = req.body

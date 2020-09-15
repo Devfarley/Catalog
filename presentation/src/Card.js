@@ -10,7 +10,7 @@ function Card ({terms, erase, refresh}) {
         const {_id,...data} = terms
         const api_url = process.env.REACT_APP_API_URL
         fetch(`${api_url}/terms/${terms._id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

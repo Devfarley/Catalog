@@ -4,12 +4,15 @@
 
 
 body {
-  background-color: #c8d0d2;
+  background-color: #4891f0;
   margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
 }
 
 ul{
-  list-style: none; 
+  list-style: none;
+  padding: 0em; 
 }
 
 a{
@@ -17,18 +20,24 @@ a{
   text-decoration: none;
 }
 
+a:hover{
+  color: #4891f0;
+}
+
 .header{
-  background-color: slategrey;
+  background-color: rgb(255, 255, 255);
 }
 
 .navigation li{
   padding:0.5rem;
 }
 
+
 .sitename{
   text-align: center;
-  padding: .5rem;
+  padding: 1rem;
   letter-spacing: 2px;
+  font-size: 2.5em;
 }
 
 .navigation{
