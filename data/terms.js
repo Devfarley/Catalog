@@ -80,7 +80,26 @@ const upsertTerms = (id, termObj) => {
     });
     return iou
 };
+//PATCH
+const updateTerms = (id, termObj) => {
+    const iou = new Promise((resolve, reject) => {
+        MongoClient.connect(url, options, (err, client) => {
+            assert.equal(err, null);
 
+            const db = client.db(db_name);
+            const collection = db.collection(col_name);
+            collection.findOneAndUpdate({_id: new ObjectId(id)},
+            {$set: {...termObj}},
+            (err, result) => {
+                assert.equal(err, null);
+                readTermById(result.value._id)
+                .then(product => resolve(product))
+                .then(() => client.close())
+            });
+        });
+    });
+    return iou
+};
 // Delete a Product, using the 'delete' Mongo Function
 const deleteTerms= (id) => {
     const iou = new Promise((resolve, reject) => {
@@ -105,5 +124,6 @@ module.exports = {
     readTerms,
     createTerms,
     upsertTerms,
+    updateTerms,
     deleteTerms
 }

@@ -1,5 +1,5 @@
 const express = require('express');
-const { readTerms, createTerms, upsertTerms, deleteTerms } = require('../../data/terms');
+const { readTerms, createTerms, upsertTerms, updateTerms, deleteTerms } = require('../../data/terms');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 router.patch('/:id', (req, res) => {
     const id = req.params.id
     const body = req.body
-    upsertTerms(id, body).then(data =>  res.send(data));
+    updateTerms(id, body).then(data =>  res.send(data));
 })
 
 router.put('/:id', (req, res) => {
